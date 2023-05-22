@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="337.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ServerPortFrameController">
+   <children>
+      <Button fx:id="btnDone" layoutX="69.0" layoutY="153.0" mnemonicParsing="false" onAction="#Done" text="Done" />
+      <TextField fx:id="portxt" layoutX="25.0" layoutY="101.0" />
+      <Button fx:id="btnExit" layoutX="75.0" layoutY="211.0" mnemonicParsing="false" onAction="#getExitBtn" text="Exit" />
+      <Label fx:id="lbllis1t" layoutX="83.0" layoutY="64.0" text="Port" />
+      <TextField fx:id="ip1" layoutX="274.0" layoutY="85.0" />
+      <TextField fx:id="host1" layoutX="274.0" layoutY="161.0" />
+      <TextField fx:id="status1" layoutX="274.0" layoutY="242.0" promptText="NotConnected" />
+      <Label fx:id="lbllist2" layoutX="340.0" layoutY="54.0" text="ip" />
+      <Label fx:id="lbllist3" layoutX="340.0" layoutY="132.0" text="host" />
+      <Label fx:id="lbllist4" layoutX="340.0" layoutY="216.0" text="status" />
+      <Label fx:id="lbllist" layoutX="196.0" layoutY="14.0" prefHeight="21.0" prefWidth="128.0" text="conected client" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="430.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Users/classroom/Downloads/WhatsApp%20Image%202023-05-16%20at%2013.47.00.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
