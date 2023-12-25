@@ -144,7 +144,7 @@ public class EchoServer extends AbstractServer
    */
   public static void main(String[] args) 
   {
-    int port = 0; //Port to listen on
+   /* int port = 0; //Port to listen on
 
     try
     {
@@ -164,7 +164,7 @@ public class EchoServer extends AbstractServer
     catch (Exception ex) 
     {
       System.out.println("ERROR - Could not listen for clients!");
-    }
+    }*/
   }
 }
 //End of EchoServer class
