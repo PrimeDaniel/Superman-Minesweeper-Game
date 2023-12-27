@@ -65,18 +65,4 @@ public class ExDetails {
 		return id.equals(((ExDetails) o).id);
 	}
 
-	// Put your details here (in English!)
-	public static ExDetails firstStudent() {
-		return new ExDetails("315880963", "Daniel", "Fraimovich",
-				"Daniel.Fraimovich@e.braude.ac.il");
-		
-	}
-
-	// Put the second student details here
-		public static ExDetails secondStudent() {
-			return new ExDetails("206015315", "Daniel", "Levovsky",
-					"Danny.Levovsky@e.braude.ac.il");
-			// if there is only one student, then erase the above line, and do:
-			// return null;
-	}
 }
