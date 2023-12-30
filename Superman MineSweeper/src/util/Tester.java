@@ -493,48 +493,7 @@ public class Tester {
 		fis.close();
 	}
 
-	public static boolean isOneStudent() {
-		ExDetails s1 = ExDetails.firstStudent();
-		ExDetails s2 = ExDetails.secondStudent();
-		return s2 == null || s1.equals(s2);
-	}
 
-	public static void generateZip() {
-		ExDetails s1 = ExDetails.firstStudent();
-		ExDetails s2 = ExDetails.secondStudent();
-		String zipName;
-
-		if (s1.similar(new ExDetails("11111119", "Ariku", "Sumsum",
-				"arik@sumsum.ac.il")))
-			throw new TesterException(
-					"first student details should be changed in ExDetails.java");
-		if (s2 != null && s2.similar(new ExDetails("222222226", "Bentz",
-				"Sesami", "bentz@gmail.com")))
-			throw new TesterException(
-					"second student details should be changed in ExDetails.java (or return null if there no second student).");
-
-		System.out.println("Check your personal details are correct here:");
-		System.out.println();
-		System.out.println(s1);
-		if (isOneStudent()) {
-			zipName = String.format("%s.zip", s1.getId());
-		} else {
-			System.out.println(s2);
-			zipName = String.format("%s_%s.zip", s1.getId(), s2.getId());
-		}
-		System.out.println("--------------------------------------");
-
-		try {
-			zipIt(zipName);
-			System.out.println(
-					"Your zip file was created automatically!, you can find it in the project directory.");
-			System.out.println("Its name is " + zipName);
-			System.out.println(
-					"Submit this file only! don't create your own zip!");
-		} catch (IOException e) {
-			System.err.println("Problem creating zip file! " + e);
-		}
-	}
 
 	// ---------------------------------------------------------------------------------
 	// Signature stuff
@@ -623,24 +582,6 @@ public class Tester {
 			checkSignature();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-	}
-
-	// ---------------------------------------------------------------------------------
-	// main - for generating zip file.
-	// ---------------------------------------------------------------------------------
-
-	public static void main(String[] args) {
-		Tester t = new Tester();
-		try {
-			if (t.checkPackage("util") && t.checkSignature())
-				generateZip();
-			else
-				t.print("Zip not generated.");
-		} catch (TesterException e) {
-			if (e.getShowStack())
-				e.printStackTrace();
-			System.err.println(e.getMessage());
 		}
 	}
 
