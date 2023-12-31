@@ -22,6 +22,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+
 public class MinesController {
 	private Mines board;
 	private int width, height, numOfMines;
@@ -29,6 +30,7 @@ public class MinesController {
 	private HBox hbox;
 	private Stage stage;
 	private Label popUpLabel;
+	private static final int BUTTON_SIZE = 35;
 
 	@FXML
 	private TextField textFieldHeight;
@@ -49,18 +51,31 @@ public class MinesController {
 		List<ColumnConstraints> column = new ArrayList<>();
 		List<RowConstraints> row = new ArrayList<>();
 
-		// get values from user
-		width = Integer.valueOf(textFieldWidth.getText());
-		height = Integer.valueOf(textFieldHeight.getText());
-		numOfMines = Integer.valueOf(textFieldMines.getText());
+		try {
+			// get values from user
+			width = Integer.parseInt(textFieldWidth.getText());
+			height = Integer.parseInt(textFieldHeight.getText());
+			numOfMines = Integer.parseInt(textFieldMines.getText());
+	
+			if (width <= 0 || height <= 0 || numOfMines <= 0) {
+				// Handle invalid input (show a message, log, etc.)
+				System.out.println("Invalid input. Please enter positive integers.");
+				return;
+			}
+		} catch (NumberFormatException e) {
+			// Handle the error (show a message, log, etc.)
+			System.out.println("Invalid input. Please enter valid integers.");
+			return;
+		}
+
 
 		// initialize board
 		board = new Mines(height, width, numOfMines);
 		fieldButtons = new Sweeper[height][width];
 		for (int i = 0; i < width; i++)
-			column.add(new ColumnConstraints(35));
+			column.add(new ColumnConstraints(BUTTON_SIZE));
 		for (int i = 0; i < height; i++)
-			row.add(new RowConstraints(35));
+			row.add(new RowConstraints(BUTTON_SIZE));
 		startGame(gridPane);
 
 		gridPane.getColumnConstraints().addAll(column);
