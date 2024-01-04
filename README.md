@@ -6,6 +6,10 @@ Welcome to Superman Minesweeper, where you get to navigate the grid, avoid Krypt
 ## Objective
 The goal of Superman Minesweeper is to clear the grid without triggering any Kryptonite mines. Uncover all the safe cells and reveal the hidden power-ups to aid Superman in his mission.
 
+
+https://github.com/PrimeDaniel/Superman-Minesweeper-Game/assets/128545450/80d4125a-a8b1-4af1-9063-9fbab0d0c577
+
+
 ## Controls
 Left Click: Reveal a cell
 Right Click: Flag a cell as potentially containing Kryptonite
